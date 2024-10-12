@@ -27,7 +27,7 @@
   },
   "dependencies": {
     "@unblockneteasemusic/rust-napi": "^0.4.0",
-    "NeteaseCloudMusicApi": "https://github.com/111inhistory/NeteaseCloudMusicApi.git#master",
+    "NeteaseCloudMusicApi": "https://github.com/111inhistory/NeteaseCloudMusicApi.git#test-whether-iphone-is-right",
     "axios": "^0.26.1",
     "change-case": "^4.1.2",
     "cli-color": "^2.0.0",
