@@ -71,7 +71,7 @@ export function getTrackDetail(ids) {
 /**
  * 获取歌词
  * 说明 : 调用此接口 , 传入音乐 id 可获得对应音乐的歌词 ( 不需要登录 )
- * @param {number} id - 音乐 id
+ * @param {bigint} id - 音乐 id
  */
 export function getLyric(id) {
   const fetchLatest = () => {
@@ -115,7 +115,7 @@ export function topSong(type) {
  * - id - 歌曲 id
  * - like - 默认为 true 即喜欢 , 若传 false, 则取消喜欢
  * @param {Object} params
- * @param {number} params.id
+ * @param {bigint} params.id
  * @param {boolean=} [params.like]
  */
 export function likeATrack(params) {
@@ -134,7 +134,7 @@ export function likeATrack(params) {
  * - sourceid - 歌单或专辑 id
  * - time - 歌曲播放时间,单位为秒
  * @param {Object} params
- * @param {number} params.id
+ * @param {bigint} params.id
  * @param {number} params.sourceid
  * @param {number=} params.time
  */
