@@ -39,7 +39,7 @@ async function deleteExcessCache() {
   }
   try {
     const delCache = await db.trackSources.orderBy('createTime').first();
-    await db.trackSources.delete(delCache.id);
+    await db.trackSources.delete(String(delCache.id));
     tracksCacheBytes -= delCache.source.byteLength;
     console.debug(
       `[debug][db.js] deleteExcessCacheSucces, track: ${delCache.name}, size: ${delCache.source.byteLength}, cacheSize:${tracksCacheBytes}`
@@ -70,7 +70,7 @@ export function cacheTrackSource(trackInfo, url, bitRate, from = 'netease') {
     })
     .then(response => {
       db.trackSources.put({
-        id: trackInfo.id,
+        id: String(trackInfo.id),
         source: response.data,
         bitRate,
         from,
@@ -86,7 +86,8 @@ export function cacheTrackSource(trackInfo, url, bitRate, from = 'netease') {
 }
 
 export function getTrackSource(id) {
-  return db.trackSources.get(Number(id)).then(track => {
+  // eslint-disable-next-line no-undef
+  return db.trackSources.get(String(id)).then(track => {
     if (!track) return null;
     console.debug(
       `[debug][db.js] get track from cache 👉 ${track.name} by ${track.artist}`
@@ -133,7 +134,8 @@ export function cacheLyric(id, lyrics) {
 }
 
 export function getLyricFromCache(id) {
-  return db.lyric.get(Number(id)).then(result => {
+  // eslint-disable-next-line no-undef
+  return db.lyric.get(String(id)).then(result => {
     if (!result) return undefined;
     return result.lyrics;
   });

@@ -76,8 +76,10 @@ export default class {
     this._current = 0; // 当前播放歌曲在播放列表里的index
     this._shuffledList = []; // 被随机打乱的播放列表，随机播放模式下会使用此播放列表
     this._shuffledCurrent = 0; // 当前播放歌曲在随机列表里面的index
-    this._playlistSource = { type: 'album', id: 123 }; // 当前播放列表的信息
-    this._currentTrack = { id: 86827685 }; // 当前播放歌曲的详细信息
+    // eslint-disable-next-line no-undef
+    this._playlistSource = { type: 'album', id: "123" }; // 当前播放列表的信息
+    // eslint-disable-next-line no-undef
+    this._currentTrack = { id: "4294967296" }; // 处理大于 32 位的整数
     this._playNextList = []; // 当这个list不为空时，会优先播放这个list的歌
     this._isPersonalFM = false; // 是否是私人FM模式
     this._personalFMTrack = { id: 0 }; // 私人FM当前歌曲
@@ -328,6 +330,7 @@ export default class {
     }
   }
   _playAudioSource(source, autoplay = true) {
+    console.log('source: ', source);
     Howler.unload();
     this._howler = new Howl({
       src: [source],

@@ -4,6 +4,10 @@
   "private": true,
   "description": "A third party music player for Netease Music",
   "author": "qier222<qier222@outlook.com>",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/your-username/your-repo.git"
+  },
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
@@ -27,14 +31,16 @@
   },
   "dependencies": {
     "@unblockneteasemusic/rust-napi": "^0.4.0",
-    "NeteaseCloudMusicApi": "https://github.com/111inhistory/NeteaseCloudMusicApi.git#test1",
+    "NeteaseCloudMusicApi": "https://gitee.com/qdqieueoq/NeteaseCloudMusicApi.git",
     "axios": "^0.26.1",
+    "bindings": "^1.5.0",
     "change-case": "^4.1.2",
     "cli-color": "^2.0.0",
     "color": "^4.2.3",
     "core-js": "^3.6.5",
     "crypto-js": "^4.0.0",
     "dayjs": "^1.8.36",
+    "dbus-next": "^0.10.2",
     "dexie": "^3.0.3",
     "discord-rich-presence": "^0.0.8",
     "electron": "^13.6.7",
